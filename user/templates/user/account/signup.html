@@ -1,0 +1,50 @@
+{% extends "../user_base/base_with_header.html" %}
+
+{% load static %}
+
+{% block title %}회원가입 | Sparkling Coffee Club{% endblock title %}
+
+{% block content %}
+    <div id="main_container">
+        <div class="form_container">
+            <div class="form">
+                <div class="title_cover">
+                    <a href="#">
+                        <h1 class="sprite_insta_big_logo title"></h1>
+                    </a>
+                </div>
+                <form method="post"  >{% csrf_token %}
+                    <div class="sign_up_text">
+                    친구들의 사진과 동영상을 보려면 가입하세요. 
+                    </div>
+                    <p>
+                    <hr>
+                    <div>
+                        <input name="email" type="email" placeholder="email">
+                    </div>
+                    <p>
+                    <div>
+                        <input name="username" type="text" placeholder="username">
+                    </div>
+                    <p>
+                    <div>
+                        <input name="password" type="password" placeholder="password">
+                    </div>
+                    <p>
+                    <div>
+                        <input name="passwordcheck" type="password" placeholder="password check">
+                    </div>
+                    <p>
+                    <input type="submit" id="submit_btn" value="가입" class="submit_btn">
+                </form>
+            </div>
+            <div class="bottom_box">
+                <div>
+                    <span>계정이 있으신가요?</span>
+                    <a class="sign_user_btn_color" href="{% url "user:signin"%}" >로그인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

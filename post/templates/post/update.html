@@ -1,0 +1,27 @@
+{% extends "post_base/base_with_header.html" %}
+
+{% block content %}
+<div class="row mb-2">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-body">
+                        {% csrf_token %}
+                        <h5 class="mt-0">{{ post_.content }}</h5>
+                        <p>
+                        <form action="/post/" method="post">
+                            
+                            <div class="form-group mb-2">
+                                <textarea class="form-control" style="resize: none" name='my-content' id="my-content"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="float:right;">수정</button>
+                        </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
